@@ -1,215 +1,677 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kist Caterers Nagpur | Pure Veg Catering Services (50 to 50,000+ Guests)</title>
-  <meta name="description" content="Kist Caterers Nagpur - Maskasath, Itwari. Har scale ke events ke liye catering - Weddings, Haldi, Mahaprasad, Corporate & Tournaments. 900+ Pure Veg Dishes." />
+  <title>Kist Caterers Nagpur | Pure Veg Catering for 50 to 50,000+ Guests</title>
+  <meta name="description" content="Kist Caterers Nagpur - Maskasath, Itwari. Catering for Weddings, Pre-weddings, Langar Mahaprasad, Corporate Events & Tournaments. 900+ Pure Veg Dishes." />
   
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root {
+      --primary: #c9922b;
+      --primary-hover: #dfa73a;
+      --bg-dark: #0f1217;
+      --bg-card: #181d26;
+      --text-light: #f5f6f8;
+      --text-muted: #b3b9c5;
+      --white: #ffffff;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --transition: all 0.35s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Utility Bar */
+    .top-bar {
+      background: #090b0e;
+      color: var(--text-muted);
+      padding: 9px 5%;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(201, 146, 43, 0.2);
+    }
+    .top-bar a {
+      color: var(--primary);
+      text-decoration: none;
+      margin-left: 10px;
+      font-weight: 500;
+    }
+
+    /* Header & Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 18, 23, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 12px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .brand-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+    .brand-text {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 1px;
+      line-height: 1.1;
+    }
+    .brand-text span {
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 400;
+      display: block;
+      letter-spacing: 2px;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .btn-quote {
+      background: var(--primary);
+      color: #111;
+      padding: 9px 20px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-quote:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Hero Section with Dark Overlay (Low Opacity Look) */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 90px 5%;
+      background: linear-gradient(
+          rgba(15, 18, 23, 0.88), 
+          rgba(15, 18, 23, 0.88)
+        ),
+        url('images/hero-buffet.jpg') center center / cover no-repeat;
+    }
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(201, 146, 43, 0.15);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    .hero h1 span {
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-muted);
+      margin-bottom: 35px;
+      max-width: 780px;
+      margin-inline: auto;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #111;
+      padding: 13px 28px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--white);
+      padding: 13px 28px;
+      border-radius: 4px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+    }
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Metrics Strip */
+    .stats-strip {
+      background: var(--bg-card);
+      padding: 30px 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Common Section */
+    section {
+      padding: 85px 5%;
+    }
+    .section-title {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px auto;
+    }
+    .section-title h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* Background Image Cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .img-card {
+      position: relative;
+      min-height: 320px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 26px;
+      border: 1px solid var(--card-border);
+      background-size: cover;
+      background-position: center;
+      transition: var(--transition);
+    }
+    .img-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 18, 23, 0.3) 0%, rgba(15, 18, 23, 0.95) 75%);
+      transition: var(--transition);
+      z-index: 1;
+    }
+    .img-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary);
+    }
+    .img-card:hover::before {
+      background: linear-gradient(180deg, rgba(15, 18, 23, 0.2) 0%, rgba(15, 18, 23, 0.98) 70%);
+    }
+    .card-content {
+      position: relative;
+      z-index: 2;
+    }
+    .card-content h3 {
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-bottom: 10px;
+      font-family: 'Cinzel', serif;
+    }
+    .card-content p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Menu Tabs & 900+ Dishes */
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 35px;
+    }
+    .tab-btn {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-light);
+      padding: 10px 22px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--primary);
+      color: #111;
+      font-weight: 600;
+      border-color: var(--primary);
+    }
+    .menu-content {
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 35px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .menu-group h4 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      border-bottom: 1px dashed rgba(201, 146, 43, 0.4);
+      padding-bottom: 6px;
+    }
+    .menu-group ul {
+      list-style: none;
+    }
+    .menu-group li {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      padding: 5px 0;
+    }
+    .menu-group li::before {
+      content: "✔ ";
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Contact & Booking Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      background: var(--bg-card);
+      border: 1px solid rgba(201, 146, 43, 0.25);
+      border-radius: 12px;
+      padding: 40px;
+    }
+    .contact-info h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--primary);
+      font-size: 1.9rem;
+      margin-bottom: 15px;
+    }
+    .contact-detail-box p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+    .contact-detail-box strong {
+      color: var(--white);
+      display: block;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .form-group input, .form-group select {
+      background: #10141c;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--primary);
+    }
+
+    /* Floating WhatsApp Icon */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+      z-index: 999;
+      transition: var(--transition);
+    }
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #080a0d;
+      padding: 30px 5%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .top-bar { flex-direction: column; gap: 6px; text-align: center; }
+      .contact-container { padding: 25px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
+  <!-- Top Utility Bar -->
   <div class="top-bar">
-    <div>📍 Maskasath, Itwari, Nagpur - 440002</div>
+    <div>📍 Maskasath, Itwari, Nagpur - 440002, Maharashtra</div>
     <div>
-      📞 Call: 
+      📞 Inquiries: 
       <a href="tel:+917030653082">+91 7030653082</a> | 
       <a href="tel:+917776815752">+91 7776815752</a>
     </div>
   </div>
 
-  <!-- Navbar -->
+  <!-- Navbar with Logo -->
   <nav>
-    <a href="#" class="logo">
-      KIST CATERERS
-      <span>NAGPUR</span>
+    <a href="#" class="brand-wrapper">
+      <img src="images/logo.png" alt="Kist Caterers Logo" class="brand-logo" onerror="this.style.display='none'" />
+      <div class="brand-text">
+        KIST CATERERS
+        <span>NAGPUR</span>
+      </div>
     </a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="#about">About Us</a></li>
       <li><a href="#events">Services</a></li>
-      <li><a href="#cuisines">Regional Swaad</a></li>
-      <li><a href="#menu">900+ Menu</a></li>
+      <li><a href="#cuisines">Regional Cuisines</a></li>
+      <li><a href="#menu">900+ Dishes</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="btn-quote">Get Rate Card</a>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Background Overlay -->
   <section class="hero">
     <div class="hero-content">
-      <span class="badge">Shuddh Swaad • Shahi Andaaz</span>
+      <span class="badge">Pure Swaad • Royal Hospitality</span>
       <h1>KIST CATERERS <span>NAGPUR</span></h1>
-      <p>50 Mehmaan Ho Ya 50,000 — Chote Parivarik Utsav Se Lekar Vishal Langar-Mahaprasad Tak. 900+ Pure Veg Dishes Ke Saath Har Budget Me Lajawab Prabandh.</p>
+      <p>From intimate family celebrations of 50 to monumental public congregations of 50,000+ guests. Experience unmatched culinary artistry with 900+ Pure Vegetarian delicacies tailored to every budget.</p>
       <div class="hero-buttons">
-        <a href="https://wa.me/917030653082?text=Namaste%20Kist%20Caterers,%20mujhe%20catering%20menu%20aur%20quotation%20chahiye." target="_blank" class="btn-primary">WhatsApp Pe Menu Mangein</a>
-        <a href="#menu" class="btn-secondary">900+ Dishes Dekhein</a>
+        <a href="https://wa.me/917030653082?text=Hello%20Kist%20Caterers,%20I%20would%20like%20to%20request%20a%20menu%20and%20quotation%20for%20my%20upcoming%20event." target="_blank" class="btn-primary">Request Menu on WhatsApp</a>
+        <a href="#menu" class="btn-secondary">Explore 900+ Dishes</a>
       </div>
     </div>
   </section>
 
-  <!-- Key Metrics -->
+  <!-- Metrics Strip -->
   <div class="stats-strip">
     <div class="stat-item">
       <div class="stat-number">50 - 50k+</div>
-      <div class="stat-label">Capacity Scale</div>
+      <div class="stat-label">Guest Scale Capacity</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">900+</div>
-      <div class="stat-label">Pure Veg Dishes</div>
+      <div class="stat-label">Pure Veg Delicacies</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">All-India</div>
+      <div class="stat-number">Pan-India</div>
       <div class="stat-label">Regional Cuisines</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">100%</div>
-      <div class="stat-label">Hygiene & Satvik Setup</div>
+      <div class="stat-label">Hygiene & Satvik Compliant</div>
     </div>
   </div>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about">
     <div class="section-title">
-      <h2>Humare Bare Me</h2>
-      <p>Maskasath, Itwari se operated Kist Caterers behtareen taste aur discipline ka doosra naam hai.</p>
+      <h2>About Kist Caterers</h2>
+      <p>Rooted in the heart of Maskasath, Itwari — redefining grand hospitality and authentic flavors.</p>
     </div>
-    <div style="max-width: 850px; margin: auto; text-align: center; color: var(--text-muted); font-size: 1rem;">
-      <p>Ghar ka chota sa Haldi-Mehndi function ho, royal wedding buffet ho ya 50,000 bhakton ka Mahaprasad — hamari experienced kitchen team, steam-cooking vats aur professional hospitality staff har scale ko bina kisi deri ke manage karte hain.</p>
+    <div style="max-width: 860px; margin: auto; text-align: center; color: var(--text-muted); font-size: 1.05rem;">
+      <p>Whether you are planning a vibrant Haldi-Mehndi ritual at home, an extravagant royal wedding banquet, or a high-volume religious Mahaprasad for 50,000 devotees, Kist Caterers bridges authentic taste with industrial-scale execution. Supported by specialized master chefs (karagirs), modern steam-cooking infrastructure, and disciplined service staff, we ensure perfection on every plate.</p>
     </div>
   </section>
 
-  <!-- Events -->
-  <section id="events" style="background: #141820;">
+  <!-- Events Catered (Background Cards) -->
+  <section id="events" style="background: #131720;">
     <div class="section-title">
       <h2>Events We Cater</h2>
-      <p>Har aayojan ke scale aur budget ke anusar customize service.</p>
+      <p>End-to-end dining setups tailored to the spirit and scale of your special celebration.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
-        <h3>Royal Weddings & Reception</h3>
-        <p>Grand dynamic buffet, live counter spread, mocktail bar, exotic fresh fruits aur shahi dessert stalls.</p>
+      <div class="img-card" style="background-image: url('images/event-wedding.jpg');">
+        <div class="card-content">
+          <h3>Weddings & Receptions</h3>
+          <p>Royal dynamic buffets, designer mocktail lounges, live international counters, and decadent traditional dessert spreads.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <h3>Haldi, Mehndi & Sangeet</h3>
-        <p>Ghar jaisa zayka, authentic street chaat stalls, hot beverages aur compact budget packages.</p>
+      <div class="img-card" style="background-image: url('images/event-prewedding.jpg');">
+        <div class="card-content">
+          <h3>Haldi, Mehndi & Sangeet</h3>
+          <p>Authentic street chaat bazaars, interactive food stalls, sizzling savories, and intimate family dining packages.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <h3>Langar & Mahaprasad</h3>
-        <p>5,000 se 50,000+ public ke liye shuddh satvik bhojan, bulk steam-cooking aur fast distribution team.</p>
+      <div class="img-card" style="background-image: url('images/event-langar.jpg');">
+        <div class="card-content">
+          <h3>Langar & Mahaprasad</h3>
+          <p>High-speed steam cooking units and streamlined logistics serving 5,000 to 50,000+ devotees with 100% purity.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <h3>Corporate & Tournaments</h3>
-        <p>Professional timing ke sath packed lunch boxes, corporate buffet aur sports tournament meal setups.</p>
+      <div class="img-card" style="background-image: url('images/event-corporate.jpg');">
+        <div class="card-content">
+          <h3>Corporate & Tournaments</h3>
+          <p>Punctual executive buffets, conference lunches, high-tea arrangements, and nutritious multi-day sports tournament catering.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Regional Flavours -->
+  <!-- Regional Cuisines (Background Cards) -->
   <section id="cuisines">
     <div class="section-title">
-      <h2>Pan-India Regional Cuisines</h2>
-      <p>Desh bhar ke anubhavi karagiron ke haathon se taiyar authentic taste.</p>
+      <h2>Pan-India Regional Specialties</h2>
+      <p>Prepared by dedicated native chefs to deliver true regional authenticity.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
-        <h3>Maharashtra & Vidarbha</h3>
-        <p>Puran Poli, Matki Usal, Varadhi Rassa, Masale Bhaat, Masala Fannas, Kothimbir Vadi, Thecha & Varhari Mirchi.</p>
+      <div class="img-card" style="background-image: url('images/cuisine-maharashtra.jpg');">
+        <div class="card-content">
+          <h3>Maharashtra & Vidarbha</h3>
+          <p>Puran Poli, Authentic Varadhi Rassa, Matki Usal, Masale Bhaat, Masala Fannas, Kothimbir Vadi, Thecha & Varhari Mirchi.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <h3>Rajasthan & Marwar</h3>
-        <p>Dal Baati Churma, Gatte Ki Sabzi, Ker Sangri, Pithore, Mawa Kachori, Malpua Rabdi.</p>
+      <div class="img-card" style="background-image: url('images/cuisine-rajasthan.jpg');">
+        <div class="card-content">
+          <h3>Rajasthan & Marwar</h3>
+          <p>Royal Dal Baati Churma, Gatte Ki Sabzi, Ker Sangri, Pithore, Mawa Kachori, and Saffron Malpua with Rabdi.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <h3>UP, MP & Bihar Swaad</h3>
-        <p>Live Litti Chokha, Indori Poha-Jalebi, Dal Bafla, Banarasi Dum Aloo, Bedmi Puri, Sev Tamatar.</p>
+      <div class="img-card" style="background-image: url('images/cuisine-north.jpg');">
+        <div class="card-content">
+          <h3>UP, MP & Bihar Classics</h3>
+          <p>Live Charcoal Litti Chokha, Indori Poha-Jalebi, Dal Bafla, Banarasi Dum Aloo, Bedmi Puri, and Sev Tamatar.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <h3>Chhattisgarh & Modern Fusion</h3>
-        <p>Chousela Roti, Faraa, Live Chinese Wok, Italian Pasta Counter, Dosa Station & Tandoori Platter.</p>
+      <div class="img-card" style="background-image: url('images/cuisine-modern.jpg');">
+        <div class="card-content">
+          <h3>CG & Global Live Stalls</h3>
+          <p>Traditional Chousela & Faraa, Live Chinese Wok, Artisanal Pasta Counter, Wood-fired Pizza, and South Indian Dosa.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 900+ Dishes Showcase -->
-  <section id="menu" style="background: #141820;">
+  <section id="menu" style="background: #131720;">
     <div class="section-title">
-      <h2>900+ Dishes Master Menu</h2>
-      <p>Har category me vishal options uplabdh hain:</p>
+      <h2>Curated 900+ Master Menu</h2>
+      <p>Explore highlights from our comprehensive culinary library:</p>
     </div>
 
     <div class="menu-tabs">
       <button class="tab-btn active" onclick="showTab('starters', event)">Starters & Chaat</button>
       <button class="tab-btn" onclick="showTab('curries', event)">Sabzi & Gravies</button>
       <button class="tab-btn" onclick="showTab('rice-dal', event)">Dal & Specialty Rice</button>
-      <button class="tab-btn" onclick="showTab('desserts', event)">Shahi Sweets</button>
+      <button class="tab-btn" onclick="showTab('desserts', event)">Royal Desserts</button>
     </div>
 
     <div id="starters" class="menu-content tab-pane">
       <div class="menu-group">
-        <h4>Tandoori & Dry Snacks</h4>
+        <h4>Tandoori & Appetizers</h4>
         <ul>
-          <li>Paneer Tikka Dry / Achari Tikka</li>
-          <li>Veg Spring Roll & Manchurian</li>
+          <li>Paneer Tikka Dry / Achari Paneer</li>
+          <li>Veg Spring Rolls & Veg Manchurian</li>
           <li>Mushroom Duplex & Cheese Balls</li>
-          <li>Veg Bullets & Cheese Cigar Roll</li>
-          <li>Spinach Cheese Kabab</li>
+          <li>Cheese Cigar Rolls & Veg Bullets</li>
+          <li>Spinach Cheese Kababs & Thai Basket</li>
         </ul>
       </div>
       <div class="menu-group">
         <h4>Live Chaat Counters</h4>
         <ul>
-          <li>Pani Puri & Papdi Chaat</li>
+          <li>Live Pani Puri (Puchka Counter)</li>
           <li>Disco Samosa & Ragda Pattice</li>
-          <li>Sev Puri & Bhel Puri</li>
+          <li>Sev Puri & Crispy Papdi Chaat</li>
           <li>Dahi Bhalla & Dahi Kachori</li>
-          <li>Aloo Chana Tikki Counter</li>
+          <li>Banarasi Tamatar & Aloo Chana Chaat</li>
         </ul>
       </div>
       <div class="menu-group">
-        <h4>Pakora & Refreshers</h4>
+        <h4>Fritters & Mocktails</h4>
         <ul>
-          <li>Moong Dal & Mirchi Bhajiya</li>
-          <li>Hara Bhara Kabab</li>
+          <li>Moong Dal & Spicy Mirchi Bhajiya</li>
+          <li>Hara Bhara Kababs & Veg Cutlets</li>
           <li>Banarasi Lassi & Shahi Aam Panna</li>
-          <li>Orange Blossom & Milkshakes</li>
-          <li>Filter Coffee & Masala Tea</li>
+          <li>Orange Blossom & Pineapple Shakes</li>
+          <li>Filter Coffee & Cutting Masala Tea</li>
         </ul>
       </div>
     </div>
 
     <div id="curries" class="menu-content tab-pane" style="display: none;">
       <div class="menu-group">
-        <h4>Shahi Paneer Specials</h4>
+        <h4>Royal Paneer Specialties</h4>
         <ul>
-          <li>Paneer Butter Masala</li>
-          <li>Paneer Tikka Masala</li>
+          <li>Paneer Butter Masala & Makhani</li>
+          <li>Paneer Tikka Masala & Kadhai Paneer</li>
           <li>Paneer Pasanda & Paneer Laccha</li>
-          <li>Kadhai Paneer & Paneer Makhni</li>
-          <li>Chana Paneer & Palak Paneer</li>
+          <li>Palak Paneer & Chana Paneer</li>
+          <li>Shahi Malai Methi Kaju Paneer</li>
         </ul>
       </div>
       <div class="menu-group">
-        <h4>Royal Koftas & Gravies</h4>
+        <h4>Signature Koftas & Curries</h4>
         <ul>
           <li>Malai Kofta & Kashmiri Kofta</li>
-          <li>Navratan Korma & Malai Methi Kaju</li>
+          <li>Navratan Korma & Veg Jaipuri</li>
           <li>Kolhapuri Kofta & Dum Aloo Kashmiri</li>
-          <li>Lauki Kofta Masala</li>
-          <li>Veg Jaipuri & Chole Masala</li>
+          <li>Lauki Kofta & Punjabi Chole Masala</li>
+          <li>Rajma Masala & Baby Corn Mutter</li>
         </ul>
       </div>
       <div class="menu-group">
-        <h4>Desi & Vidarbha Flavours</h4>
+        <h4>Regional & Desi Gravies</h4>
         <ul>
-          <li>Masala Fannas (Kathal)</li>
-          <li>Jhunka & Bharli Vangi</li>
-          <li>Sarso Da Saag & Makke Roti</li>
-          <li>Dal Kanda & Matki Usal</li>
+          <li>Masala Fannas (Raw Jackfruit Curry)</li>
+          <li>Traditional Jhunka & Bharli Vangi</li>
+          <li>Sarso Da Saag with White Butter</li>
+          <li>Dal Kanda & Sprouted Matki Usal</li>
           <li>Pathvali Bhaaji & Baigan Bharta</li>
         </ul>
       </div>
@@ -219,131 +681,132 @@
       <div class="menu-group">
         <h4>Specialty Rice & Biryani</h4>
         <ul>
-          <li>Fannas (Kathal) Biryani</li>
-          <li>Paneer Pulao & Paneer Biryani</li>
-          <li>Kashmiri Pulao & Tawa Pulao</li>
-          <li>Authentic Masale Bhaat</li>
-          <li>Curd Rice & Gola/Meetha Bhaat</li>
+          <li>Fannas (Jackfruit) Dum Biryani</li>
+          <li>Paneer Pulao & Royal Paneer Biryani</li>
+          <li>Kashmiri Pulao & Bombay Tawa Pulao</li>
+          <li>Authentic Maharashtrian Masale Bhaat</li>
+          <li>Curd Rice & Traditional Gola Bhaat</li>
         </ul>
       </div>
       <div class="menu-group">
-        <h4>Dal & Kadhi Selection</h4>
+        <h4>Dals & Kadhi Selection</h4>
         <ul>
-          <li>Dal Makhani & Dal Tadka</li>
-          <li>Dal Kolhapuri & Yellow Dal Butter</li>
-          <li>Lehsun Jeera Dal & Dal Palak</li>
-          <li>Punjabi Kadhi Pakora</li>
-          <li>Simple Marwari & Maharashtrian Kadhi</li>
+          <li>Dal Makhani (Slow-cooked Overnight)</li>
+          <li>Dal Fry (Double Butter) & Dal Tadka</li>
+          <li>Dal Kolhapuri & Lehsun Jeera Dal</li>
+          <li>Amritsari Kadhi Pakora</li>
+          <li>Traditional Gujarati & Marwari Kadhi</li>
         </ul>
       </div>
       <div class="menu-group">
         <h4>Breads & Live Rotis</h4>
         <ul>
-          <li>Tandoori Roti (Butter / Plain)</li>
-          <li>Roomali Roti & Kashmiri Naan</li>
+          <li>Tandoori Roti (Plain & Butter)</li>
+          <li>Butter Naan & Kashmiri Stuffed Naan</li>
+          <li>Roomali Roti & Laccha Parathas</li>
           <li>Jowar Bhakar & Raandali Roti</li>
-          <li>Laccha Paratha (Tawa/Tandoor)</li>
-          <li>Palak, Masala & Plain Puris</li>
+          <li>Makke Di Roti & Bedmi Puris</li>
         </ul>
       </div>
     </div>
 
     <div id="desserts" class="menu-content tab-pane" style="display: none;">
       <div class="menu-group">
-        <h4>Traditional Shahi Mithai</h4>
+        <h4>Royal Traditional Sweets</h4>
         <ul>
           <li>Rabdi Malpua & Rabdi Jalebi</li>
           <li>Angoori Rasmalai & Cham-Cham</li>
-          <li>Motichoor, Besan & Rava Laddu</li>
+          <li>Motichoor, Besan & Rava Laddus</li>
           <li>Kaju Katli & Kaju Roll</li>
-          <li>Kala Jam & Gulab Jamun</li>
+          <li>Kala Jamun & Hot Gulab Jamun</li>
         </ul>
       </div>
       <div class="menu-group">
-        <h4>Maharashtra Specials</h4>
+        <h4>Regional Delights</h4>
         <ul>
-          <li>Ghee Puran Poli & Khoya Poli</li>
-          <li>Basundi & Shrikhand</li>
-          <li>Chawal Ki Kheer & Kesar Badam Kheer</li>
+          <li>Pure Desi Ghee Puran Poli</li>
+          <li>Khoya Poli & Shahi Basundi</li>
+          <li>Amrakhand & Kesar Shrikhand</li>
           <li>Gajar Ka Halwa & Moong Dal Halwa</li>
-          <li>Pineapple Halwa & Aloo Sheera</li>
+          <li>Kesar Badam Kheer & Aloo Sheera</li>
         </ul>
       </div>
       <div class="menu-group">
         <h4>Chilled Desserts</h4>
         <ul>
           <li>Rabdi Faluda Kulfi</li>
-          <li>Live Ice Gola Counter</li>
-          <li>Fruit Custard & Fresh Fruit Salad</li>
-          <li>Multi-flavor Premium Ice Creams</li>
-          <li>Mishti Doi & Rasbari</li>
+          <li>Interactive Live Ice Gola Bar</li>
+          <li>Exotic Fruit Custard & Fresh Salad</li>
+          <li>Gourmet Ice Creams (Vanilla, Pista, Choc)</li>
+          <li>Traditional Mishti Doi & Rasbari</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Booking & Contact Section -->
   <section id="contact">
     <div class="section-title">
-      <h2>Apna Event Book Karein</h2>
-      <p>Customized rate card aur sample menu ke liye direct enquiry karein.</p>
+      <h2>Plan Your Next Celebration</h2>
+      <p>Connect with our event managers for tailored menus and transparent quotations.</p>
     </div>
 
     <div class="contact-container">
       <div class="contact-info">
         <h3>Kist Caterers</h3>
-        <p>Nagpur ka trusted catering setup. 50 se lekar 50,000+ logo tak ke har aayojan ke liye taiyar.</p>
+        <p>Nagpur's trusted name in large and boutique event catering. Delivering flavor, purity, and flawless execution across Vidarbha.</p>
         
         <div class="contact-detail-box">
-          <p><strong>📍 Location:</strong> Maskasath, Itwari, Nagpur, Maharashtra - 440002</p>
-          <p><strong>📞 Contact Numbers:</strong> 
+          <p><strong>📍 Corporate Office:</strong> Maskasath, Itwari, Nagpur, Maharashtra - 440002</p>
+          <p><strong>📞 Direct Phone Lines:</strong> 
             <a href="tel:+917030653082" style="color: var(--primary); text-decoration: none;">+91 7030653082</a> / 
             <a href="tel:+917776815752" style="color: var(--primary); text-decoration: none;">+91 7776815752</a>
           </p>
-          <p><strong>🍲 Scale:</strong> Pure Veg • 50 se 50,000+ Guests • 900+ Dishes</p>
+          <p><strong>🍽 Culinary Scope:</strong> 100% Pure Veg • 50 to 50,000+ Guests • 900+ Dishes</p>
         </div>
       </div>
 
       <form class="contact-form" onsubmit="sendToWhatsApp(event)">
         <div class="form-group">
-          <label>Aapka Naam</label>
-          <input type="text" id="custName" placeholder="Full Name" required />
+          <label>Full Name</label>
+          <input type="text" id="custName" placeholder="Your Name" required />
         </div>
         <div class="form-group">
-          <label>Phone Number</label>
+          <label>Contact Number</label>
           <input type="tel" id="custPhone" placeholder="Mobile Number" required />
         </div>
         <div class="form-group">
-          <label>Event Type</label>
+          <label>Event Category</label>
           <select id="eventType">
-            <option value="Wedding / Reception">Wedding / Reception</option>
-            <option value="Haldi / Mehndi / Sangeet">Haldi / Mehandi / Sangeet</option>
-            <option value="Langar / Mahaprasad">Langar / Mahaprasad (5,000 - 50,000+)</option>
-            <option value="Corporate / Tournament">Corporate / Tournament</option>
-            <option value="Small Social Event">Small Social Event / Birthday</option>
+            <option value="Wedding / Grand Reception">Wedding / Grand Reception</option>
+            <option value="Haldi / Mehndi / Sangeet">Haldi / Mehndi / Sangeet</option>
+            <option value="Langar / Mahaprasad">Langar / Mahaprasad (5,000 to 50,000+)</option>
+            <option value="Corporate / Sports Tournament">Corporate / Sports Tournament</option>
+            <option value="Intimate Social Gathering">Intimate Social Gathering / Birthday</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Estimated Guests (50 se 50,000+)</label>
-          <input type="number" id="guestCount" placeholder="Mehmaano Ki Sankhya" required />
+          <label>Estimated Guest Count (50 - 50,000+)</label>
+          <input type="number" id="guestCount" placeholder="e.g. 500" required />
         </div>
         <div class="form-group">
           <label>Event Date & Location</label>
-          <input type="text" id="eventLoc" placeholder="e.g. 15 Nov, Nagpur" required />
+          <input type="text" id="eventLoc" placeholder="e.g. 24th Nov, Nagpur" required />
         </div>
-        <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%; margin-top:5px;">WhatsApp Par Rate Mangein</button>
+        <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%; margin-top:6px;">Submit via WhatsApp</button>
       </form>
     </div>
   </section>
 
-  <!-- WhatsApp Floating Icon -->
-  <a href="https://wa.me/917030653082" target="_blank" class="floating-whatsapp" title="WhatsApp Us">💬</a>
+  <!-- WhatsApp Floating Trigger -->
+  <a href="https://wa.me/917030653082" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">💬</a>
 
   <!-- Footer -->
   <footer>
     <p>&copy; Kist Caterers Nagpur | Maskasath, Itwari, Nagpur 440002. All Rights Reserved.</p>
   </footer>
 
+  <!-- Script for Tabs & WhatsApp -->
   <script>
     function showTab(tabId, event) {
       document.querySelectorAll('.tab-pane').forEach(el => el.style.display = 'none');
@@ -361,7 +824,7 @@
       const guests = document.getElementById('guestCount').value;
       const loc = document.getElementById('eventLoc').value;
 
-      const message = `Namaste Kist Caterers,%0A%0AMujhe catering ke liye quote chahiye:%0A- *Naam:* ${name}%0A- *Mobile:* ${phone}%0A- *Event:* ${eventType}%0A- *Mehmaan:* ${guests}%0A- *Date/Location:* ${loc}`;
+      const message = `Hello Kist Caterers,%0A%0AI would like to get a quote for catering:%0A- *Name:* ${name}%0A- *Contact:* ${phone}%0A- *Event:* ${eventType}%0A- *Guests:* ${guests}%0A- *Date/Location:* ${loc}`;
       
       window.open(`https://wa.me/917030653082?text=${message}`, '_blank');
     }
